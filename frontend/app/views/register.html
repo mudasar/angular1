@@ -1,0 +1,62 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2 class="panel-title">Register</h2>
+  </div>
+  <div class="panel-body">
+
+    <form class="form-horizontal" ng-submit="submit()" novalidate="novalidate" name="register" id="register-form" method="post">
+      <fieldset>
+        <legend>Register</legend>
+
+        <div class="form-group" ng-class='{"has-error": register.firstname.$dirty && register.firstname.$invalid}'>
+          <label for="firstname" class="col-lg-2 control-label">First Name</label>
+          <div class="col-lg-5">
+            <input type="text" class="form-control" id="firstname" placeholder="First name ..." ng-model="firstname" name="firstname" ng-minlength="3" required />
+            <span class="has-error" ng-show="register.firstname.$dirty && register.firstname.$invalid">First name is required</span>
+          </div>
+        </div>
+
+        <div class="form-group" ng-class='{"has-error": register.lastname.$dirty && register.lastname.$invalid}'>
+          <label for="lastname" class="col-lg-2 control-label">Last Name</label>
+          <div class="col-lg-5">
+            <input type="lastname" class="form-control" id="lastname" placeholder="Last name ..." ng-model="lastname" name="lastname" ng-minlength="3" required />
+            <span class="has-error" ng-show="register.lastname.$dirty && register.lastname.$invalid">Last name is required</span>
+          </div>
+        </div>
+
+        <div class="form-group" ng-class='{"has-error": register.email.$dirty && login.register.$invalid}'>
+          <label for="email" class="col-lg-2 control-label">Email</label>
+          <div class="col-lg-5">
+            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="email" name="email" ng-minlength="3" required />
+            <span class="has-error" ng-show="register.email.$dirty && register.email.$invalid">A valid email is required</span>
+          </div>
+        </div>
+        <div class="form-group" ng-class='{"has-error": register.password.$dirty && register.password.$invalid}'>
+          <label for="password" class="col-lg-2 control-label">Password</label>
+          <div class="col-lg-5">
+            <input type="password" class="form-control" id="password" placeholder="Password" ng-model="password" name="password" ng-minlength="3" required />
+            <span ng-show="register.password.$dirty && register.password.$invalid" class="has-error">Password is required.</span>
+          </div>
+        </div>
+        <div class="form-group" ng-class='{"has-error": register.confirmpassword.$dirty && register.confirmpassword.$invalid}'>
+          <label for="confirmpassword" class="col-lg-2 control-label">Confirm Password</label>
+          <div class="col-lg-5">
+            <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" ng-model="confirmpassword" name="confirmpassword" validate-equals="password" />
+            <span ng-show="register.confirmpassword.$dirty && register.confirmpassword.$invalid" class="has-error">Confirm Password doesn't match.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-10">
+            <a type="button" class="btn btn-default" ui-sref="main"  >Cancel</a>
+            <input type="submit" class="btn btn-primary" ng-disabled="register.$invalid" value="Register" />
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <div class="panel-footer">
+
+  </div>
+</div>
