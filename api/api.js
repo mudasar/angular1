@@ -40,7 +40,7 @@ app.post('/register', function(req, res){
   });
 });
 
-mongoose.connect('mongodb://ali:28017/users');
+mongoose.connect('mongodb://localhost:28017/users');
 
 //start server
 app.listen(3000, function(){
