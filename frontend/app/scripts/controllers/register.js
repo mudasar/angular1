@@ -10,7 +10,7 @@
 angular.module('angular1App')
   .controller('RegisterCtrl', function ($scope,$rootScope, $http, alert) {
 
-    var url = 'http://localhost:3000/register';
+    var url = 'http://admin.iproblem.com/api/account/register';
     var user = {firstName:"ali", lastName:'wajdan', email:'aliwajdan@gmail.com', password:'123'};
     $scope.submit = function () {
 

@@ -19,7 +19,7 @@
       })
       .state('contact',{url:'/contact',templateUrl:'views/contact.html'})
       .state('register',{url:'/register',templateUrl:'views/register.html', controller:"RegisterCtrl"})
-      .state('login',{url:'/login',templateUrl:'views/login.html'})
+      .state('login',{url:'/login',templateUrl:'views/login.html', controller:'LoginCtrl'})
 
     });
 

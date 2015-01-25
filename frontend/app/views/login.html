@@ -4,13 +4,13 @@
   </div>
   <div class="panel-body">
     <h5><a ui-sref="forgot-password">Forgot password?</a></h5>
-    <form class="form-horizontal" name="login" id="login-form" method="post">
+    <form class="form-horizontal" name="login" id="login-form" method="post" ng-submit="submit()" novalidate="novalidate">
       <fieldset>
         <legend>Login with your credentials</legend>
         <div class="form-group" ng-class='{"has-error": login.email.$dirty && login.email.$invalid}'>
           <label for="email" class="col-lg-2 control-label">Email</label>
           <div class="col-lg-5">
-            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="email" name="email" ng-minlength="3" required />
+            <input type="email" class="form-control" id="email" placeholder="Email" ng-model="user.email" name="email" ng-minlength="3" required />
             <span class="has-error" ng-show="login.email.$dirty && login.email.$invalid">A valid email is required</span>
           </div>
         </div>
@@ -24,8 +24,8 @@
         <div class="form-group">
           <div class="col-lg-2"></div>
           <div class="col-lg-10">
-            <a type="button" class="btn btn-default" ui-sref="main"  >Cancel</a>
-            <input type="button" class="btn btn-primary" value="Login" />
+            <a class="btn btn-default" ui-sref="main"  >Cancel</a>
+            <input type="submit" class="btn btn-primary" value="Login"  ng-disabled="login.$invalid" />
           </div>
         </div>
       </fieldset>

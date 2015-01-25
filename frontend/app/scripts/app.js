@@ -19,7 +19,8 @@
       'ngRoute',
       'ngSanitize',
       'ngTouch',
-      'ui.router'
+      'ui.router',
+      'angular-loading-bar'
     ]);
 })();
 
